@@ -24,15 +24,6 @@ loop graph v currPos n count cost ans i
         ans2 = tsp graph (boolTrue i v) i n (count + 1) (cost + ((graph !! currPos) !! i)) ans
       in loop graph v currPos n count cost ans2 (i + 1)
     | otherwise = loop graph v currPos n count cost ans (i + 1)
-{-
-loop graph v currPos n count cost ans i =
-   if i==n
-      then ans
-      else if not (v !! i) && (((graph !! currPos) !! i) > 0)
-         then let ans2 = tsp graph (boolTrue i v) i n (count+1) (cost + ((graph !! currPos) !! i)) ans in 
-            loop graph (boolFalse i v) currPos n count cost ans2 (i+1)
-         else loop graph v currPos n count cost ans (i+1)
--}
 
 
 -- Sets boolean on place a in the list to True
