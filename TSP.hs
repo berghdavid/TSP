@@ -92,19 +92,18 @@ main = do
    graph <- getLine
    let 
       g = read graph :: Integer
-   a <- 
-      (if g == 4 then time i graph4
-         else if g == 5 then time i graph5
-            else if g == 8 then time i graph8
-               else if g == 9 then time i graph9
-                  else if g == 10 then time i graph10
-                     else time i graph20
-      )
-   
+      answer 
+         | g == 4 = time i graph4
+         | g == 5 = time i graph5
+         | g == 8 = time i graph8
+         | g == 9 = time i graph9
+         | g == 10 = time i graph10
+         | otherwise = time i graph20
+   a <- answer
    putStrLn (intercalate "\n" a)
    putStrLn "Done, press enter to close ..."
-   done <- getLine
-   putStrLn done
+   exit <- getLine
+   putStrLn exit
 
 
 time :: (Eq t, Num t) => t -> [[Int]] -> IO [String]
