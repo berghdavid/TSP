@@ -1,3 +1,3 @@
 # TSP
 Backtracking solution solving the Travelling Salesman Problem using Haskell.
-Prints time taken for solving.
+The time taken for solving is printed.
